@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :operational %>
-    <%= f.check_box :operational %>
+    <%= f.select :operational, [["Operational Station", "Operational Station"], ["Under Construction", "Under Construction"], ["Targeted Station", "Targeted Station"]] %>
   </div>
   <div class="field">
     <%= f.label :store_number %>
@@ -69,7 +69,7 @@
   </div>
   <div class="field">
     <%= f.label :certification %>
-    <%= f.text_field :certification %>
+    <%= f.select :certification, [["Servo Fill", "Servo Fill"], ["Servo Break", "Servo Break"], ["Servo Relax", "Servo Relax"], ["Servo Maintenance", "Servo Maintenance"]] %>
   </div>
   <div class="actions">
     <%= f.submit %>
