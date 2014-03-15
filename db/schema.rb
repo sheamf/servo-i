@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315202648) do
+ActiveRecord::Schema.define(version: 20140315203820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140315202648) do
 
   create_table "stations", force: true do |t|
     t.string   "name"
-    t.boolean  "operational"
+    t.string   "operational"
     t.string   "store_number"
     t.decimal  "cng_price"
     t.decimal  "deisel_price"
