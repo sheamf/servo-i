@@ -1,0 +1,55 @@
+<h1>Listing stations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Operational</th>
+      <th>Store number</th>
+      <th>Cng price</th>
+      <th>Deisel price</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip code</th>
+      <th>Phone number</th>
+      <th>Subscriber</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Certification</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stations.each do |station| %>
+      <tr>
+        <td><%= station.name %></td>
+        <td><%= station.operational %></td>
+        <td><%= station.store_number %></td>
+        <td><%= station.cng_price %></td>
+        <td><%= station.deisel_price %></td>
+        <td><%= station.address1 %></td>
+        <td><%= station.address2 %></td>
+        <td><%= station.city %></td>
+        <td><%= station.state %></td>
+        <td><%= station.zip_code %></td>
+        <td><%= station.phone_number %></td>
+        <td><%= station.subscriber %></td>
+        <td><%= station.email %></td>
+        <td><%= station.website %></td>
+        <td><%= station.certification %></td>
+        <td><%= link_to 'Show', station %></td>
+        <td><%= link_to 'Edit', edit_station_path(station) %></td>
+        <td><%= link_to 'Destroy', station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Station', new_station_path %>

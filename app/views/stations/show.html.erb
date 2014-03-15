@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @station.name %>
+</p>
+
+<p>
+  <strong>Operational:</strong>
+  <%= @station.operational %>
+</p>
+
+<p>
+  <strong>Store number:</strong>
+  <%= @station.store_number %>
+</p>
+
+<p>
+  <strong>Cng price:</strong>
+  <%= @station.cng_price %>
+</p>
+
+<p>
+  <strong>Deisel price:</strong>
+  <%= @station.deisel_price %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @station.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @station.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @station.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @station.state %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @station.zip_code %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @station.phone_number %>
+</p>
+
+<p>
+  <strong>Subscriber:</strong>
+  <%= @station.subscriber %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @station.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @station.website %>
+</p>
+
+<p>
+  <strong>Certification:</strong>
+  <%= @station.certification %>
+</p>
+
+<%= link_to 'Edit', edit_station_path(@station) %> |
+<%= link_to 'Back', stations_path %>
