@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  operational: false
+  store_number: MyString
+  cng_price: 9.99
+  deisel_price: 9.99
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  phone_number: MyString
+  subscriber: false
+  email: MyString
+  website: MyString
+  certification: MyString
+
+two:
+  name: MyString
+  operational: false
+  store_number: MyString
+  cng_price: 9.99
+  deisel_price: 9.99
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  phone_number: MyString
+  subscriber: false
+  email: MyString
+  website: MyString
+  certification: MyString
