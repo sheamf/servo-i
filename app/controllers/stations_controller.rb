@@ -8,6 +8,14 @@ class StationsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@stations) do |station, marker|
       marker.lat station.latitude
       marker.lng station.longitude
+      marker.infowindow station.name
+      marker.picture({
+       # "url" => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+       # "url" => "/servo_logo.png",
+       "url" => "http://i.imgur.com/IsJU86s.png",   
+       "width" =>  64,
+       "height" => 66})
+      marker.json({:id => station.id })
     end
   end
 
