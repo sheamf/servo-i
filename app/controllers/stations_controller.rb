@@ -5,6 +5,10 @@ class StationsController < ApplicationController
   # GET /stations.json
   def index
     @stations = Station.all
+    @hash = Gmaps4rails.build_markers(@stations) do |station, marker|
+      marker.lat station.latitude
+      marker.lng station.longitude
+    end
   end
 
   # GET /stations/1
@@ -28,7 +32,7 @@ class StationsController < ApplicationController
 
     respond_to do |format|
       if @station.save
-        format.html { redirect_to @station, notice: 'Station was successfully created.' }
+        format.html { redirect_to stations_url, notice: 'Station was successfully created.' }
         format.json { render action: 'show', status: :created, location: @station }
       else
         format.html { render action: 'new' }
@@ -69,6 +73,6 @@ class StationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def station_params
-      params.require(:station).permit(:name, :operational, :store_number, :cng_price, :deisel_price, :address1, :address2, :city, :state, :zip_code, :phone_number, :subscriber, :email, :website, :certification)
+      params.require(:station).permit(:name, :operational, :store_number, :cng_price, :deisel_price, :address1, :address2, :city, :state, :zip_code, :phone_number, :subscriber, :email, :website, :certification, :full_address)
     end
 end

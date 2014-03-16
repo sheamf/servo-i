@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require skel.min
 //= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require_tree .
+
