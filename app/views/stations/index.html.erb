@@ -126,7 +126,7 @@
 <%= link_to 'New Station', new_station_path %>
 
 <script type="text/javascript">
-buildMap(<%=raw @hash.to_json %>);
+var handler = buildMap(<%=raw @hash.to_json %>);
 // handler = Gmaps.build('Google');
 // handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 //   markers = handler.addMarkers(<%=raw @hash.to_json %>);
@@ -172,34 +172,38 @@ buildMap(<%=raw @hash.to_json %>);
 // function initialize() {
   var directionsDisplay = new google.maps.DirectionsRenderer();
   var directionsService = new google.maps.DirectionsService();
-// }
+// // }
 
 function calcRoute() {
-  // var origin      = new google.maps.LatLng(41.850033, -87.6500523);
-  // var destination = new google.maps.LatLng(42.850033, -85.6500523);
-  var endGeo;
-  var geocoder = new google.maps.Geocoder();
-  console.log(geocoder);
-  var startAddress = document.getElementById("startValueId").value;
-  console.log(startAddress);
-  var endAddress = document.getElementById("endValueId").value;
-  console.log(endAddress);
-  var startGeo = geocoder.geocode( { 'address': startAddress}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
-          endGeo = geocoder.geocode( { 'address': endAddress}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-            });
-              var origin = startGeo;
-              var destination = endGeo;
+  var origin      = new google.maps.LatLng(41.850033, -87.6500523);
+  var destination = new google.maps.LatLng(42.850033, -85.6500523);
+//   var endGeo;
+//   var geocoder = new google.maps.Geocoder();
+//   var startAddress = document.getElementById("startValueId").value;
+//   console.log(startAddress);
+//   var endAddress = document.getElementById("endValueId").value;
+//   console.log(endAddress);
+//   var startGeo = geocoder.geocode( { 'address': startAddress}, function(results, status) {
+//       if (status == google.maps.GeocoderStatus.OK) {
+//         map.setCenter(results[0].geometry.location);
+//         var marker = new google.maps.Marker({
+//             map: map,
+//             position: results[0].geometry.location
+//         });
+//           endGeo = geocoder.geocode( { 'address': endAddress}, function(results, status) {
+//           if (status == google.maps.GeocoderStatus.OK) {
+//             map.setCenter(results[0].geometry.location);
+//             var marker = new google.maps.Marker({
+//                 map: map,
+//                 position: results[0].geometry.location
+//             });
+//               var origin = startGeo;
+//               var destination = endGeo;
+              // var handler = Gmaps.build('Google');
+              // handler.buildMap({ internal: {id: 'map'}}, function(){
+                directionsDisplay.setMap(handler.getMap());
+              // });
+
               var request = {
                   origin:      origin,
                   destination: destination,
@@ -210,14 +214,15 @@ function calcRoute() {
                   directionsDisplay.setDirections(response);
                 }
               });
-          } else {
-            alert("Geocode was not successful for the following reason: " + status);
-          }
-          });
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
+
+//           } else {
+//             alert("Geocode was not successful for the following reason: " + status);
+//           }
+//           });
+//       } else {
+//         alert("Geocode was not successful for the following reason: " + status);
+//       }
+//     });
   // console.log(startGeo); //undefined
   
   // console.log(endGeo); //undefined
@@ -227,10 +232,10 @@ function calcRoute() {
 
 // calcRoute(); // call this anywhere you want
 
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: {id: 'map'}}, function(){
-  directionsDisplay.setMap(handler.getMap());
-});
+// var handler = Gmaps.build('Google');
+// handler.buildMap({ internal: {id: 'map'}}, function(){
+//   directionsDisplay.setMap(handler.getMap());
+// });
 
 // });
 </script>
