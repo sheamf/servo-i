@@ -1,0 +1,2 @@
+module StationLocationsHelper
+end

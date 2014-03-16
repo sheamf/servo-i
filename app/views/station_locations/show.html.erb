@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @station_location.name %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @station_location.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @station_location.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @station_location.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @station_location.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @station_location.zip %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @station_location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @station_location.longitude %>
+</p>
+
+<p>
+  <strong>Gmaps:</strong>
+  <%= @station_location.gmaps %>
+</p>
+
+<%= link_to 'Edit', edit_station_location_path(@station_location) %> |
+<%= link_to 'Back', station_locations_path %>
