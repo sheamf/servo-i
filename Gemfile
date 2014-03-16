@@ -40,9 +40,9 @@ group :development do
   gem 'binding_of_caller'
 end
 
-gem "therubyracer"
-gem "less-rails"
-gem 'twitter-bootstrap-rails'
+# gem "therubyracer"
+# gem "less-rails"
+# gem 'twitter-bootstrap-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
