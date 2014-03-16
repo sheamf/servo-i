@@ -6,17 +6,17 @@
 
 
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
+
 <br>
 <div id="directions">
   <form>
-    <input type="text" id="startValueId" placeholder="Start"/><br>
-    <input type="text" id="endValueId" placeholder="End"/><br>
+    <input type="text" id="startValueId" placeholder="Start"/>
+    <input type="text" id="endValueId" placeholder="End"/>
     <input type="button" id="getDirections" value="Get Directions" onclick="calcRoute()"/>
   </form>
-
+<div style='width: 1400px;'>
+  <div id="map" style='width: 1400px; height: 600px;'></div>
+</div>
   <script type="text/javascript">
     // var geocoder;
     // var map;
@@ -73,7 +73,7 @@
   <%# end %>
 </div> -->
 
-<h1>Listing stations</h1>
+<!--<h1>Listing stations</h1>
 
 <table class="table table-striped">
   <thead>
@@ -98,35 +98,36 @@
   </thead>
 
   <tbody>
-    <% @stations.each do |station| %>
+    <%# @stations.each do |station| %>
       <tr>
-        <td><%= station.name %></td>
-        <td><%= station.full_address %></td>
-        <td><%= station.operational %></td>
-        <td><%= station.store_number %></td>
-        <td><%= station.cng_price %></td>
-        <td><%= station.deisel_price %></td>
-        <td><%= station.phone_number %></td>
-        <td><%= station.subscriber %></td>
-        <td><%= station.email %></td>
-        <td><%= station.website %></td>
-        <td><%= station.certification %></td>
-        <td><%= station.latitude %></td>
-        <td><%= station.longitude %></td>
-        <td><%= link_to 'Show', station %></td>
-        <td><%= link_to 'Edit', edit_station_path(station) %></td>
-        <td><%= link_to 'Destroy', station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= station.name %></td>
+        <td><%#= station.full_address %></td>
+        <td><%#= station.operational %></td>
+        <td><%#= station.store_number %></td>
+        <td><%#= station.cng_price %></td>
+        <td><%#= station.deisel_price %></td>
+        <td><%#= station.phone_number %></td>
+        <td><%#= station.subscriber %></td>
+        <td><%#= station.email %></td>
+        <td><%#= station.website %></td>
+        <td><%#= station.certification %></td>
+        <td><%#= station.latitude %></td>
+        <td><%#= station.longitude %></td>
+        <td><%#= link_to 'Show', station %></td>
+        <td><%#= link_to 'Edit', edit_station_path(station) %></td>
+        <td><%#= link_to 'Destroy', station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
-</table>
+</table>-->
 
 <br>
 
-<%= link_to 'New Station', new_station_path %>
+<%#= link_to 'New Station', new_station_path %>
 
 <script type="text/javascript">
 var handler = buildMap(<%=raw @hash.to_json %>);
+// buildMap is calling buildMap in the coffeescript file, which is returning handler, which is set to handler here.  
 // handler = Gmaps.build('Google');
 // handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 //   markers = handler.addMarkers(<%=raw @hash.to_json %>);
@@ -175,8 +176,8 @@ var handler = buildMap(<%=raw @hash.to_json %>);
 // // }
 
 function calcRoute() {
-  var origin      = new google.maps.LatLng(41.850033, -87.6500523);
-  var destination = new google.maps.LatLng(42.850033, -85.6500523);
+  var origin      = new google.maps.LatLng(42.331427, -83.0457538);
+  var destination = new google.maps.LatLng(29.4241219, -98.49362819999999);
 //   var endGeo;
 //   var geocoder = new google.maps.Geocoder();
 //   var startAddress = document.getElementById("startValueId").value;
