@@ -40,9 +40,7 @@ group :development do
   gem 'binding_of_caller'
 end
 
-gem "therubyracer"
-gem "less-rails"
-gem 'twitter-bootstrap-rails'
+
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'

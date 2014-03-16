@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require skel.min
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
