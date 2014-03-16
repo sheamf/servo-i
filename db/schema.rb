@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(version: 20140316003459) do
     t.datetime "updated_at"
   end
 
+  create_table "station_locations", force: true do |t|
+    t.string   "name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stations", force: true do |t|
     t.string   "name"
     t.string   "operational"
