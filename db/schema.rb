@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324003736) do
+ActiveRecord::Schema.define(version: 20140324012707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "station_locations", force: true do |t|
-    t.string   "name"
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
@@ -32,10 +31,10 @@ ActiveRecord::Schema.define(version: 20140324003736) do
 
   create_table "stations", force: true do |t|
     t.string   "name"
-    t.string   "operational"
+    t.string   "operational_status"
     t.string   "store_number"
     t.decimal  "cng_price"
-    t.decimal  "deisel_price"
+    t.decimal  "diesel_price"
     t.boolean  "subscriber"
     t.string   "certification"
     t.datetime "created_at"
