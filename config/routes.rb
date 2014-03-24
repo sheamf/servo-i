@@ -1,4 +1,6 @@
 Servo::Application.routes.draw do
+  resources :owners
+
   resources :stations
   resources :station_locations
 
