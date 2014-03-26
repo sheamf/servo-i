@@ -1,7 +1,8 @@
 class StationLocation < ActiveRecord::Base
 
 
-	has_one :station
+	belongs_to :station
+  # has_many :stations
 
 	geocoded_by :full_address
 	after_validation :geocode 

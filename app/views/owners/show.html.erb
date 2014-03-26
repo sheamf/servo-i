@@ -14,6 +14,14 @@
   <strong>Email:</strong>
   <%= @owner.email %>
 </p>
-
+<br>
+<p>
 <%= link_to 'Edit', edit_owner_path(@owner) %> |
 <%= link_to 'Back', owners_path %>
+</p>
+
+<br>
+<p>
+  <%= link_to 'Add Station', new_owner_station_path(@owner) %>
+</p>
+<br>

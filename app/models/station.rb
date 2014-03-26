@@ -1,9 +1,11 @@
 class Station < ActiveRecord::Base
 
-	#belongs_to :owner
-	belongs_to :station_location
+	# has_one :location, class_name: 'StationLocation'
+  has_many :station_locations
+  # belongs_to :station_location
+	has_many :station_contacts
 
-	geocoded_by :full_address
-	after_validation :geocode 
+	belongs_to :owner
+
 
 end

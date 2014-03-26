@@ -26,7 +26,9 @@ class StationsController < ApplicationController
 
   # GET /stations/new
   def new
-    @station = Station.new
+    # @station = Station.new
+    @station = StationForm.new(params[:owner_id]) # should this be ||= because I'm setting station in create else block?
+
   end
 
   # GET /stations/1/edit
@@ -36,17 +38,28 @@ class StationsController < ApplicationController
   # POST /stations
   # POST /stations.json
   def create
-    @station = Station.new(station_params)
-
-    respond_to do |format|
-      if @station.save
-        format.html { redirect_to stations_url, notice: 'Station was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @station }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @station.errors, status: :unprocessable_entity }
-      end
+    # @station = Station.new(station_params)
+    form = StationForm.new(params[:owner_id])
+    if form.submit(params[:station])
+      station = form.station
+      redirect_to station
+      # redirect_to owner_path(params[:owner_id])
+    else
+      @station = form
+      render 'new'
     end
+
+
+
+    # respond_to do |format|
+    #   if @station.save
+    #     format.html { redirect_to stations_url, notice: 'Station was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @station }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @station.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /stations/1
@@ -79,8 +92,8 @@ class StationsController < ApplicationController
       @station = Station.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def station_params
-      params.require(:station).permit(:name, :operational, :store_number, :cng_price, :deisel_price, :address1, :address2, :city, :state, :zip_code, :phone_number, :subscriber, :email, :website, :certification, :full_address)
-    end
+    # # Never trust parameters from the scary internet, only allow the white list through.
+    # def station_params
+    #   params.require(:station).permit(:name, :operational, :store_number, :cng_price, :deisel_price, :address1, :address2, :city, :state, :zip_code, :phone_number, :subscriber, :email, :website, :certification, :full_address)
+    # end
 end

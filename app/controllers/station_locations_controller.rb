@@ -73,6 +73,6 @@ class StationLocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def station_location_params
-      params.require(:station_location).permit(:name, :address1, :address2, :city, :state, :zip, :latitude, :longitude, :gmaps)
+      params.require(:station_location).permit(:name, :address1, :address2, :city, :state, :zip, :latitude, :longitude, :gmaps, :station_id)
     end
 end

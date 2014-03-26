@@ -1,7 +1,11 @@
 Servo::Application.routes.draw do
-  resources :owners
+  resources :owners do
+    resources :stations, only: [:new, :create]
+  end
 
-  resources :stations
+  resources :stations, only: [:index, :show, :update, :edit]
+
+
   resources :station_locations
 
   # The priority is based upon order of creation: first created -> highest priority.
