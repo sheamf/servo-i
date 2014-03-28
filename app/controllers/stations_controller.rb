@@ -1,8 +1,6 @@
 class StationsController < ApplicationController
   before_action :set_station, only: [:show, :edit, :update, :destroy]
 
-  # GET /stations
-  # GET /stations.json
   def index
     @stations = Station.all
     @hash = Gmaps4rails.build_markers(@stations) do |station, marker|
@@ -19,24 +17,18 @@ class StationsController < ApplicationController
     end
   end
 
-  # GET /stations/1
-  # GET /stations/1.json
   def show
   end
 
-  # GET /stations/new
   def new
     # @station = Station.new
     @station = StationForm.new(params[:owner_id]) # should this be ||= because I'm setting station in create else block?
 
   end
 
-  # GET /stations/1/edit
   def edit
   end
 
-  # POST /stations
-  # POST /stations.json
   def create
     # @station = Station.new(station_params)
     form = StationForm.new(params[:owner_id])
@@ -62,8 +54,6 @@ class StationsController < ApplicationController
     # end
   end
 
-  # PATCH/PUT /stations/1
-  # PATCH/PUT /stations/1.json
   def update
     respond_to do |format|
       if @station.update(station_params)
@@ -76,8 +66,6 @@ class StationsController < ApplicationController
     end
   end
 
-  # DELETE /stations/1
-  # DELETE /stations/1.json
   def destroy
     @station.destroy
     respond_to do |format|

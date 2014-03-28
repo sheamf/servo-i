@@ -1,8 +1,6 @@
 class StationLocationsController < ApplicationController
   before_action :set_station_location, only: [:show, :edit, :update, :destroy]
 
-  # GET /station_locations
-  # GET /station_locations.json
   def index
     @station_locations = StationLocation.all
     @hash = Gmaps4rails.build_markers(@station_locations) do |station_location, marker|
@@ -11,22 +9,16 @@ class StationLocationsController < ApplicationController
     end
   end
 
-  # GET /station_locations/1
-  # GET /station_locations/1.json
   def show
   end
 
-  # GET /station_locations/new
   def new
     @station_location = StationLocation.new
   end
 
-  # GET /station_locations/1/edit
   def edit
   end
 
-  # POST /station_locations
-  # POST /station_locations.json
   def create
     @station_location = StationLocation.new(station_location_params)
 
@@ -41,8 +33,6 @@ class StationLocationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /station_locations/1
-  # PATCH/PUT /station_locations/1.json
   def update
     respond_to do |format|
       if @station_location.update(station_location_params)
@@ -55,8 +45,6 @@ class StationLocationsController < ApplicationController
     end
   end
 
-  # DELETE /station_locations/1
-  # DELETE /station_locations/1.json
   def destroy
     @station_location.destroy
     respond_to do |format|
