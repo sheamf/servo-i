@@ -8,13 +8,13 @@
 // compiled file.
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
+// about supported directives. Removed temporarily- skel.min (was third down)
 //
 //= require jquery
 //= require jquery_ujs
-//= require skel.min
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require bootstrap
 //= require_tree .
 

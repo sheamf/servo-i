@@ -31,7 +31,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'simple_form'
-#gem 'bootstrap-sass'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 group :doc do
