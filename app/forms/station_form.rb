@@ -63,7 +63,7 @@ private
   def persist!
       @station = Station.new(name: name, operational_status: operational_status, store_number: store_number,
                              cng_price: cng_price, diesel_price: diesel_price)
-      @station.station_locations.build(address1: address1, address2: address2, city: city, state: state, zip: zip)
+      @station.station_location.build(address1: address1, address2: address2, city: city, state: state, zip: zip)
       @station.save!
   end
 
