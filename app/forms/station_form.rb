@@ -49,7 +49,6 @@ class StationForm
     else
       false
     end
-    #then, define persist!
   end
 
   def extract_params(params)
