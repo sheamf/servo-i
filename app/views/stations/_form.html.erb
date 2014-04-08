@@ -1,3 +1,4 @@
+<div class="span6" >
 <%= form_for [@station.owner, @station], as: :station, url: owner_stations_path(@station.owner, @station) do |f| %>
 <!-- I think the 'as:' option might be needed because I'm passing in two objects?  Normally, the form
 gets that value from the first arg, which is used to generate the params hash key.  But here, I need
@@ -79,5 +80,5 @@ I think I need the URL option as well, b/c it builds the path from the first arg
 <% end %>
 
 
-
+</div>
 
