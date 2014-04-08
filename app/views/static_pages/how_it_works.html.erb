@@ -1,0 +1,31 @@
+<h3>Using the demo app</h3>
+
+<p>
+<b>To add a station:</b>
+<p>
+
+<p>
+<ol>
+  <li><%= link_to "Add a station owner.", new_owner_path %></li>
+  <li>From the owner's page, click the "Add Station" link.  This will link the new station to that owner.  </li>
+  <li>Fill in the required fields and submit the form.  The station will appear on the map and on the <%= link_to "stations list", stations_path %>.</li>
+</ol>
+</p>
+
+<p>
+Currently, there are no user accounts for station owners.  Since there are currently only a few hundred stations that would meet Servo's criteria, and since each station needs to be vetted individually, there is no support for station owners to enter their own station information.  This can easily be changed.  
+</p>
+
+
+<p>
+<b>Station map, route planning, and station index:</b>
+</p>
+
+<p>Click either the "Servo" link or the "Stations" link on the header.  This will take you to the main stations page, where you can:
+<ul>
+  <li>View a map of Servo-certified stations</li>
+  <li>Plan a route using the map</li>
+  <li>View a list of Servo-certified stations and summary info, with a link to details for each station</li>
+</ul>
+</p>
+
