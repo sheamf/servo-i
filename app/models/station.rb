@@ -5,13 +5,16 @@ class Station < ActiveRecord::Base
 
 	belongs_to :owner
 
-
   def latitude
-    self.location.latitude
+    location.latitude
   end
 
   def longitude
-    self.location.longitude
+    location.longitude
+  end
+
+  def phone_number
+    station_contacts.first.phone_number if station_contacts.first
   end
 
 
