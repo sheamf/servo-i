@@ -10,7 +10,7 @@
     <div class="form-group">
     <input type="text" class="form-control" id="startValueId" placeholder="Start"/>
     <input type="text" class="form-control" id="endValueId" placeholder="End"/>
-    <input type="button" class="btn btn-primary btn-small" id="getDirections" value="Get Directions" onclick="calcRoute()"/>
+    <input type="button" class="btn btn-primary btn-small" id="getDirections" value="Get Directions" /> <!--onclick="calcRoute()"/>-->
     </div>
   </form>
 <br>
@@ -87,8 +87,8 @@ var handler = buildMap(<%=raw @hash.to_json %>);
       var start = $('#startValueId').val();
       var end = $('#endValueId').val();
       codeAddress(start, end);
-      });
-  });
+
+
 
 
   function codeAddress(start, end) {
@@ -133,6 +133,10 @@ var handler = buildMap(<%=raw @hash.to_json %>);
       }
     });
   }
+
+  });
+
+  });
 
 </script>
 
