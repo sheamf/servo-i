@@ -16,7 +16,6 @@
         <%= link_to "Servo", stations_path, id: "logo" %>
         <nav>
           <ul class="nav pull-right">
-            <li class="how-it-works"><%= link_to "(demo info)",   '/how_it_works' %></li> 
             <li><%= link_to "Servo Cert",     '#' %></li>
             <li><%= link_to "Owners",         owners_path %></li>
             <li><%= link_to "Stations",       stations_path %></li>
@@ -89,6 +88,9 @@
 
     </div>
     <footer id="footer-bs">
+      <ul>
+        <p class="how-it-works"><%= link_to "(demo info)",   '/how_it_works' %></p> 
+      </ul>
       <%= debug(params) if Rails.env.development? %>
       <%#= debug(session) if Rails.env.development? %>
     </footer>

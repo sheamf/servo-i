@@ -25,6 +25,14 @@ textarea {
   margin-bottom: 10px;
 }*/
 
+/*td {*/
+  /*padding: 3px 25px;*/
+/*}*/
+
+a:hover {
+  text-decoration: none;
+}
+
 .container {
 
   h3 {
@@ -38,6 +46,13 @@ textarea {
     margin: 0 0 10px;
     display: block;
   }
+
+  .btn.btn-primary {
+    a {
+      color: white;
+    }
+  }
+
 }
 
 
