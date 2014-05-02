@@ -1,0 +1,31 @@
+<h3>Select station owner:</h3>
+<br>
+<p><%= collection_select(:owner, :name, Owner.all, :id, :name, { prompt: 'Select Owner' }) %></p>
+
+<p><button id="choose_owner" type="button" class="btn btn-primary">Create Station</button></p>
+
+
+<script type='text/javascript'>
+
+$(document).ready(function() {
+
+  $('select').change(function() {
+
+    var $owner_id = $(this).val();
+    
+    $('#choose_owner').click(function() { 
+
+      if ( !!$owner_id ) {
+
+        var url = '/owners/' + $owner_id + '/stations/new'
+
+        window.location.href = url
+      }
+
+    });
+
+  });
+
+});
+
+</script>

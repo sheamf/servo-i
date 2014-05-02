@@ -8,6 +8,8 @@ Servo::Application.routes.draw do
 
   get '/how_it_works',  to: 'static_pages#how_it_works'
 
+  get 'select_owner', to: 'owners#select_owner'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

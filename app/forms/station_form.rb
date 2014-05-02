@@ -6,7 +6,7 @@ class StationForm
 
   attr_reader :owner, :station, :station_location #what does this line accomplish?
 
-  attr_accessor :name, :operational_status, :store_number, :cng_price, :diesel_price, :subscriber, :subscriber, :certification,
+  attr_accessor :owner, :name, :operational_status, :store_number, :cng_price, :diesel_price, :subscriber, :subscriber, :certification,
                 :address1, :address2, :city, :state, :zip
 
   # # not using Virtus atm.  
@@ -60,7 +60,7 @@ class StationForm
 private
 
   def persist!
-      @station = Station.new(name: name, operational_status: operational_status, store_number: store_number,
+      @station = Station.new(owner: owner, name: name, operational_status: operational_status, store_number: store_number,
                              cng_price: cng_price, diesel_price: diesel_price)
       @station.build_location(address1: address1, address2: address2, city: city, state: state, zip: zip)
       @station.save!

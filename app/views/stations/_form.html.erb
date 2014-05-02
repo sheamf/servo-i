@@ -1,84 +1,98 @@
-<div class="span6" >
-<%= form_for [@station.owner, @station], as: :station, url: owner_stations_path(@station.owner, @station) do |f| %>
-<!-- I think the 'as:' option might be needed because I'm passing in two objects?  Normally, the form
-gets that value from the first arg, which is used to generate the params hash key.  But here, I need
-to pass in :station so params[:station] is used.
-I think I need the URL option as well, b/c it builds the path from the first arg as well.   -->
-  <% if @station.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10" >
+      <%= form_for [@station.owner, @station], as: :station, url: owner_stations_path(@station.owner, @station) do |f| %>
+      <!-- I think the 'as:' option might be needed because I'm passing in two objects?  Normally, the form
+      gets that value from the first arg, which is used to generate the params hash key.  But here, I need
+      to pass in :station so params[:station] is used.
+      I think I need the URL option as well, b/c it builds the path from the first arg as well.   -->
+      <h1>New station for <%= Owner.find(@station.owner).name %></h1>
+        <% if @station.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
 
-      <ul>
-      <% @station.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+            <ul>
+            <% @station.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <br>
+        <div class="span5">
+          <h3>Station Info:</h3>
+          <!-- <br> -->
+          <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :operational_status %>
+            <%= f.select :operational_status, [["Operational Station", "Operational Station"], ["Under Construction", "Under Construction"], ["Targeted Station", "Targeted Station"]] %>
+          </div>
+          <div class="field">
+            <%= f.label :store_number %>
+            <%= f.text_field :store_number %>
+          </div>
+          <div class="field">
+            <%= f.label :cng_price %>
+            <%= f.text_field :cng_price %>
+          </div>
+          <div class="field">
+            <%= f.label :diesel_price %>
+            <%= f.text_field :diesel_price %>
+          </div>
+          <div class="field">
+            <%= f.label :subscriber %>
+            <%= f.check_box :subscriber %>
+          </div><br>
+          <div class="field">
+            <%= f.label :certification %>
+            <%= f.select :certification, [["Servo Fill", "Servo Fill"], ["Servo Break", "Servo Break"], ["Servo Relax", "Servo Relax"], ["Servo Maintenance", "Servo Maintenance"]] %>
+          </div>
+        </div>
+        <!-- <br> -->
+        <div class="span5">
+
+<!-- consider breaking this up into a multi-step form?  so location is a second page? -->
+
+          <h3>Location:</h3>
+          <!-- <br> -->
+          <div class="field">
+            <%= f.label :address1 %>
+            <%= f.text_field :address1 %>
+          </div>
+          <div class="field">
+            <%= f.label :address2 %>
+            <%= f.text_field :address2 %>
+          </div>
+          <div class="field">
+            <%= f.label :city %>
+            <%= f.text_field :city %>
+          </div>
+          <div class="field">
+            <%= f.label :state %>
+            <%= f.text_field :state %>
+          </div>
+          <div class="field">
+            <%= f.label :zip %>
+            <%= f.text_field :zip %>
+          </div>
+        </div>
+
+
+        <div class="span10">
+          <div class="actions">
+            <br>
+            <br>
+            <!-- <div class="pull-right"> -->
+              <%= f.submit "Add New Station", { :type => 'button', :class => 'btn btn-primary' } %>
+            <!-- </div> -->
+          </div>
+        </div>
       <% end %>
-      </ul>
+      
     </div>
-  <% end %>
-  <br>
-  <h3>Station Info:</h3>
-  <br>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :operational_status %>
-    <%= f.select :operational_status, [["Operational Station", "Operational Station"], ["Under Construction", "Under Construction"], ["Targeted Station", "Targeted Station"]] %>
-  </div>
-  <div class="field">
-    <%= f.label :store_number %>
-    <%= f.text_field :store_number %>
-  </div>
-  <div class="field">
-    <%= f.label :cng_price %>
-    <%= f.text_field :cng_price %>
-  </div>
-  <div class="field">
-    <%= f.label :diesel_price %>
-    <%= f.text_field :diesel_price %>
-  </div>
-  <div class="field">
-    <%= f.label :subscriber %>
-    <%= f.check_box :subscriber %>
-  </div>
-  <div class="field">
-    <%= f.label :certification %>
-    <%= f.select :certification, [["Servo Fill", "Servo Fill"], ["Servo Break", "Servo Break"], ["Servo Relax", "Servo Relax"], ["Servo Maintenance", "Servo Maintenance"]] %>
-  </div>
-  <br>
-  <h3>Station Location</h3>
-  <br>
-  <div class="field">
-    <%= f.label :address1 %><br>
-    <%= f.text_field :address1 %>
-  </div>
-  <div class="field">
-    <%= f.label :address2 %><br>
-    <%= f.text_field :address2 %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
-  </div>
-  <br>
-
-
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-
 </div>
 
